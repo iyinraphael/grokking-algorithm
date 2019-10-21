@@ -9,6 +9,7 @@ import Cocoa
 func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
     var low = 0
     var high = sortedArray.count - 1
+    var new = 0
     
     while low <= high{
         let mid = (low + high) / 2
@@ -18,17 +19,20 @@ func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
         }
         if guess > item {
             high = mid - 1
+            new = mid
         }
         else{
             low = mid + 1
+            new = mid + 1
         }
         
     }
-    return nil
+    
+    return new
 }
 
-var my_list = [1, 3, 5, 7, 8, 9]
-binarySearch(my_list, item: 8)
+var my_list = [1, 3, 5, 7]
+binarySearch(my_list, item: 2)
 binarySearch(my_list, item: -1)
 
 //Big O notaion tells the number of operations an  algoritmn will make
