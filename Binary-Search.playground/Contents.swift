@@ -46,3 +46,29 @@ binarySearch(my_list, item: -1)
         - O(n!) traveling saleperson
  */
 
+
+func mySqrt(_ x: Int) -> Int {
+    
+    var low = 0
+    var high = x
+    var root = 0
+    
+    while low <= high {
+        let mid = (low + high) / 2
+        
+        if mid * mid == high {
+            return mid
+        }
+        if mid * mid > x {
+            high = mid - 1
+        }
+        else {
+            low = mid + 1
+            root = mid
+        }
+    }
+    
+    return root
+}
+
+mySqrt(10)
