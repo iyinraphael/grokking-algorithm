@@ -115,26 +115,26 @@ var  numbers = [5,25,75]
 
 twoSum(numbers, 6)
 
-func twoSimpleSum(_ numbers: [Int], _ target: Int) -> [Int] {
+func twoSimpleSum(_ numbers: [Int], _ target: Int) -> [Int]? {
     
     var count = 0
-    var new = 0
+    var len  = numbers.count - 1
     var index = [Int]()
     
-    for _ in numbers {
-        let num = numbers[count]
+    while count < len {
+        let sum = numbers[count] + numbers[len]
+        if sum == target {
+            index.append(count)
+            index.append(len)
+            return index
         
-        for number in numbers {
-            if num + number == target && numbers.index(of: number) != count {
-                index.append(count + 1 )
-    
-            }
-            new += 1
+        } else if sum < target {
+            count += 1
+        } else {
+            len -= 1
         }
-        count += 1
     }
-    
-    return index
+    return nil
 }
 
 twoSimpleSum(numbers, 100)
