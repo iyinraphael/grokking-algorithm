@@ -72,3 +72,29 @@ bubbleSort(&numbers)
 //for end in (1..<numbers.count).reversed() {
 //    print(end)
 //}
+
+func isAnagram(_ s: inout String, _ t: inout String) -> Bool {
+    
+    var arr = [String]()
+    let count = s.count
+    
+    for str in s {
+        for st in t {
+            if str == st {
+                let index = t.firstIndex(of: st)!
+                arr.append(String(t.remove(at: index)))
+            }
+        }
+    }
+    if count == arr.count {
+        return true
+    }
+    
+    return false
+}
+var s = "aacc"
+var t = "ccac"
+
+isAnagram(&s, &t)
+
+func mearge

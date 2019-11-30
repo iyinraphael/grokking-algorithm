@@ -3,13 +3,19 @@ import Cocoa
 //Binary Search
 /*  -It works only on a sorted list
     -It has bigO notation of log2n
-    -Binary Search runs Logarithpmic  Time
+    -Binary Search runs Logarithmic  Time
  */
+
+
+// Template Binary search
 
 func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
     var low = 0
     var high = sortedArray.count - 1
-    var new = 0
+    
+    if sortedArray.contains(item) == false {
+        return -1
+    }
     
     while low <= high{
         let mid = (low + high) / 2
@@ -19,21 +25,19 @@ func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
         }
         if guess > item {
             high = mid - 1
-            new = mid
         }
         else{
             low = mid + 1
-            new = mid + 1
         }
         
     }
     
-    return new
+    return -1
 }
 
 var my_list = [1, 3, 5, 7]
-binarySearch(my_list, item: 2)
-binarySearch(my_list, item: -1)
+binarySearch(my_list, item: 7)
+binarySearch(my_list, item: 3)
 
 //Big O notaion tells the number of operations an  algoritmn will make
 /*
