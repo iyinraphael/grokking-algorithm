@@ -53,26 +53,27 @@ binarySearch(my_list, item: 3)
 
 func mySqrt(_ x: Int) -> Int {
     
-    var low = 0
-    var high = x
-    var root = 0
+    let nums = 0...x
+    var leftIndex = 0
+    var rightindex = nums.count - 1
+    var root: Int?
     
-    while low <= high {
-        let mid = (low + high) / 2
-        
-        if mid * mid == high {
+    while leftIndex <= rightindex {
+        let mid = (leftIndex + rightindex) / 2
+        let sqrt = Array(nums)[mid]
+        if sqrt * sqrt == x {
             return mid
         }
         if mid * mid > x {
-            high = mid - 1
+            rightindex = mid - 1
         }
         else {
-            low = mid + 1
+            leftIndex = mid + 1
             root = mid
         }
     }
     
-    return root
+    return root ?? 0
 }
 
 mySqrt(10)
