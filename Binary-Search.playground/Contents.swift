@@ -6,9 +6,7 @@ import Cocoa
     -Binary Search runs Logarithmic  Time
  */
 
-
 // Template Binary search
-
 func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
     var low = 0
     var high = sortedArray.count - 1
@@ -53,15 +51,14 @@ binarySearch(my_list, item: 3)
 
 func mySqrt(_ x: Int) -> Int {
     
-    let nums = 0...x
     var leftIndex = 0
-    var rightindex = nums.count - 1
+    var rightindex = x
     var root: Int?
     
     while leftIndex <= rightindex {
-        let mid = (leftIndex + rightindex) / 2
-        let sqrt = Array(nums)[mid]
-        if sqrt * sqrt == x {
+        let mid = Int((leftIndex + rightindex) / 2)
+
+        if mid * mid == x {
             return mid
         }
         if mid * mid > x {
@@ -76,7 +73,7 @@ func mySqrt(_ x: Int) -> Int {
     return root ?? 0
 }
 
-mySqrt(10)
+mySqrt(8)
 
 func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
     var low = 0
