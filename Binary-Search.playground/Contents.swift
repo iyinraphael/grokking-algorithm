@@ -170,3 +170,22 @@ func search(_ nums: [Int], _ target: Int) -> Int {
    }
 let bin = [4,5,6,7,0,1,2]
 search(bin, 4)
+
+//func nnmySqrt(_ x: Int) -> Int {
+//    var low = 0
+//    var high = x
+//
+//    while low <= high {
+//        let mid = low + high / 2
+//
+//        if mid * mid == x {
+//           return mid
+//        } else if (mid * mid) > x {
+//                high = mid
+//        }
+//    }
+//    return 0
+//}
+//
+//
+//nnmySqrt(16)
