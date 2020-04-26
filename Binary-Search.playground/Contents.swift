@@ -33,7 +33,7 @@ func binarySearch(_ sortedArray:[Int], item: Int) -> Int? {
     return -1
 }
 
-var my_list = [1, 3, 5, 7]
+var my_list = [1, 3, 5, 7].sorted()
 binarySearch(my_list, item: 7)
 binarySearch(my_list, item: 3)
 
@@ -140,3 +140,33 @@ func twoSimpleSum(_ numbers: [Int], _ target: Int) -> [Int]? {
 }
 
 twoSimpleSum(numbers, 100)
+
+func search(_ nums: [Int], _ target: Int) -> Int {
+       
+       let sortedArray = nums.sorted()
+       var leftIndex = 0
+       var rightIndex = sortedArray.count - 1
+       var mid = 0
+       
+       if nums.contains(target) == false {
+           return -1
+       }
+       
+       while leftIndex <= rightIndex {
+           mid = (leftIndex + rightIndex) / 2
+           let guess = sortedArray[mid]
+           
+           if guess == target {
+               return mid
+           }
+           if guess > target {
+               rightIndex = mid - 1
+           }
+           else {
+               leftIndex = mid + 1
+           }
+       }
+       return mid
+   }
+let bin = [4,5,6,7,0,1,2]
+search(bin, 4)
