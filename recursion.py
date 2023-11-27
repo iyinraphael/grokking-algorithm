@@ -42,3 +42,9 @@ def fact(x):
 
 
 
+# Sum using recursion by applying the Divide and Conquer approach
+def _findSum(arr, n):
+    if n <= 0:
+        return 0
+    else:
+        return _findSum(arr, n - 1) + arr[n - 1]
